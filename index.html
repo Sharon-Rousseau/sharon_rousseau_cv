@@ -10,7 +10,7 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background:#fff;
+    background: repeating-linear-gradient(135deg, #f9f9f9 0, #f9f9f9 10px, #ffffff 10px, #ffffff 20px);
     color:#111;
   }
   header {
@@ -19,13 +19,14 @@
     text-align:center;
     padding:2rem 1rem;
   }
-  header img.photo {
+  .photo {
     width:150px;
     height:150px;
     border-radius:50%;
     object-fit:cover;
     border:4px solid #fff;
-    margin-bottom:1rem;
+    margin:0 auto 1rem;
+    background:#ccc;
   }
   section {
     max-width:900px;
@@ -38,16 +39,25 @@
     padding-bottom:0.3rem;
   }
   .job {
-    margin-bottom:2rem;
+    background:#f5f5f5;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:1rem;
+    margin:2rem auto;
+    max-width:700px;
   }
   .job h3 {
     margin-bottom:0.2rem;
   }
   .toggle {
-    color:#555;
-    font-size:0.9rem;
-    margin-left:1rem;
+    display:block;
+    margin-top:0.5rem;
+    color:#0066cc;
+    text-decoration:underline;
     cursor:pointer;
+  }
+  .details {
+    margin-top:1rem;
   }
   .details ul{
     padding-left:1.5rem;
@@ -64,32 +74,47 @@
 </head>
 <body>
 <header>
+  <div class="photo"></div>
   <h1>Sharon Rousseau</h1>
-  <p>Dynamic Operations Coordinator | Systems & Process Management | Compliance Expert</p>
+  <p>Operations Coordinator | Systems & Process Management | Compliance</p>
   <p>📍 Sandton, South Africa | 📞 +27 71 303 4629 | 📧 <a href="mailto:sharon.rousseau00@gmail.com">sharon.rousseau00@gmail.com</a></p>
   <p><a href="https://www.linkedin.com/in/sharon-rousseau-a35ba312b/" target="_blank">LinkedIn Profile</a></p>
 </header>
 <section>
   <h2>Professional Summary</h2>
-  <p>Operations Coordinator at Holborn Assets with expertise in compliance register maintenance, systems implementation, and project management. Strong track record of streamlining operations, driving cross-functional initiatives, and enhancing internal systems across multiple departments and regions.</p>
+  <p>Dynamic Operations Coordinator at Holborn Assets with expertise in compliance register maintenance and regulatory reporting. Proven ability to streamline processes and enhance operational efficiency. Skilled in interdepartmental collaboration and training facilitation, delivering impactful results in onboarding and event coordination. Committed to excellence in client engagement and data accuracy.</p>
 </section>
 <section>
   <h2>Key Skills</h2>
   <ul>
-    <li>Regulatory & Compliance: FSCA register, Fit & Proper, CPD records, offshore client transfers</li>
-    <li>Process Implementation: SharePoint migration, systems design, digital transformation</li>
-    <li>HR & Admin: Onboarding, contract drafting, internal policy creation</li>
-    <li>Office & Facilities Management: Lease contracts, vendor management, logistics</li>
-    <li>Project & Event Management: Internal training, onboarding programs, budget control</li>
-    <li>Marketing & Communication: Digital content design, internal newsletters, branding</li>
-    <li>Software & Systems: SharePoint, Teams, Microsoft 365, CRM tools</li>
-  </ul>
+  <li>FSCA representative register maintenance and Fit and Proper tracking and recordkeeping</li>
+  <li>Terms of Business submission and provider management (local and offshore)</li>
+  <li>Sub-agent applications, closures, quarterly reconciliations, and client transfer administration</li>
+  <li>Platform access coordination and operational record maintenance</li>
+  <li>Operational strategy and process implementation</li>
+  <li>Project management and cross-functional collaboration</li>
+  <li>Systems design, digital transformation, and automation</li>
+  <li>HR administration and onboarding workflows</li>
+  <li>Office management and facilities coordination</li>
+  <li>Data and records management (accuracy, confidentiality, compliance)</li>
+  <li>Supplier/vendor and lease contract negotiation</li>
+  <li>Client service and CRM system administration</li>
+  <li>Internal and external communications</li>
+  <li>Event planning, logistics, and budget coordination</li>
+  <li>Digital marketing, branding, and content design</li>
+  <li>IT and telephony support liaison</li>
+  <li>Financial administration and cost optimization</li>
+  <li>Training delivery and new staff induction</li>
+  <li>Business document drafting and professional correspondence</li>
+  <li>Time and task prioritization across dynamic roles</li>
+</ul>
 </section>
 <section>
   <h2>Work Experience</h2>
   <div class="job">
     <h3>Operations Coordinator, Africa – Holborn Assets, Sandton</h3>
-    <p><em>Jun 2024 – Present</em> <span class="toggle">Show details</span></p>
+    <p><em>Jun 2024 – Present</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>Compliance & Regulatory Oversight</h4>
       <ul>
@@ -144,7 +169,8 @@
 
   <div class="job">
     <h3>Office Manager – Holborn Assets, Sandton</h3>
-    <p><em>Feb 2022 – May 2024</em> <span class="toggle">Show details</span></p>
+    <p><em>Feb 2022 – May 2024</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>General Office Management</h4>
       <ul>
@@ -213,7 +239,8 @@
 
   <div class="job">
     <h3>Receptionist – Holborn Assets, Sandton, South Africa</h3>
-    <p><em>Nov 2021 – Jan 2022</em> <span class="toggle">Show details</span></p>
+    <p><em>Nov 2021 – Jan 2022</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>Facilities & Office Support</h4>
       <ul>
@@ -248,7 +275,8 @@
 
   <div class="job">
     <h3>Data Administrator – Hammond Pole Attorneys, Johannesburg, South Africa</h3>
-    <p><em>Feb 2021 – Oct 2021</em> <span class="toggle">Show details</span></p>
+    <p><em>Feb 2021 – Oct 2021</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>Data Entry & Records Management</h4>
       <ul>
@@ -277,7 +305,8 @@
 
   <div class="job">
     <h3>Small Business Owner – Self-Employed, Sandton, South Africa</h3>
-    <p><em>Apr 2020 – Sep 2021</em> <span class="toggle">Show details</span></p>
+    <p><em>Apr 2020 – Sep 2021</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>Business Operations & Administration</h4>
       <ul>
@@ -327,7 +356,8 @@
 
   <div class="job">
     <h3>Administrator – Exley Financial Solutions, Johannesburg, South Africa</h3>
-    <p><em>May 2019 – Mar 2020</em> <span class="toggle">Show details</span></p>
+    <p><em>May 2019 – Mar 2020</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>Administrative Support & Coordination</h4>
       <ul>
@@ -355,7 +385,8 @@
 
   <div class="job">
     <h3>Personal Assistant to the Chief Executive Officer – PACS Pty Ltd, Johannesburg, South Africa</h3>
-    <p><em>Jan 2015 – Jun 2019</em> <span class="toggle">Show details</span></p>
+    <p><em>Jan 2015 – Jun 2019</em></p>
+    <a href="#" class="toggle">Show details</a>
     <div class="details" style="display:none;">
       <h4>Executive & Personal Assistance</h4>
       <ul>
@@ -396,7 +427,7 @@
   document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.toggle').forEach(function(t){
       t.addEventListener('click', function(){
-        var d = this.parentElement.nextElementSibling;
+        var d = this.nextElementSibling;
         if(d.style.display === 'none' || d.style.display===''){
           d.style.display = 'block';
           this.textContent = 'Hide details';
