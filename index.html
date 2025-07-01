@@ -1,57 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sharon Rousseau - Professional Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    .header { background: #0c1c2c; color: #fff; padding: 2rem; text-align: center; }
-    .container { max-width: 1100px; margin: auto; padding: 2rem; }
-    h1, h2 { color: #0c1c2c; }
-    .section { background: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.5rem; }
-    .skills-list, .languages-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .pill { background: #0c1c2c; color: white; padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.9rem; }
-    .job { margin-bottom: 1.5rem; }
-    .toggle { color: #555; font-size: 0.9rem; margin-left: 0.5rem; cursor: pointer; }
-    .details ul { padding-left: 1.2rem; }
-    footer { text-align: center; background: #0c1c2c; color: #fff; padding: 1rem; margin-top: 2rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharon Rousseau - Operations Coordinator</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background:#f7f7f7;
+    color:#222;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+  }
+  .sidebar {
+    background:#0d1b2a;
+    color:#fff;
+    padding:2rem 1rem;
+    position:sticky;
+    top:0;
+    height:100vh;
+  }
+  .sidebar img {
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 1rem;
+  }
+  .sidebar h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size:1.8rem;
+    text-align:center;
+    margin-bottom:0.2rem;
+  }
+  .sidebar h2 {
+    font-weight:normal;
+    font-size:1rem;
+    text-align:center;
+    margin-top:0;
+    margin-bottom:1rem;
+  }
+  .contact {
+    text-align:center;
+    font-size:0.9rem;
+  }
+  .contact a {
+    color:#79c2f3;
+    text-decoration:none;
+  }
+  .linkedin-btn {
+    display:inline-block;
+    background:#79c2f3;
+    color:#0d1b2a;
+    padding:0.4rem 0.8rem;
+    border-radius:4px;
+    margin-top:1rem;
+    text-decoration:none;
+    font-weight:600;
+  }
+  .content {
+    padding:2rem;
+  }
+  section {
+    background:#fff;
+    padding:1.5rem;
+    margin-bottom:1.5rem;
+    border-radius:6px;
+    box-shadow:0 2px 4px rgba(0,0,0,0.05);
+  }
+  h3 {
+    font-family:'Poppins', sans-serif;
+    margin-top:0;
+  }
+  .skills-list {
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+  .pill {
+    background:#0d1b2a;
+    color:#fff;
+    padding:0.3rem 0.7rem;
+    border-radius:999px;
+    font-size:0.85rem;
+  }
+  .job {
+    margin-bottom:1rem;
+  }
+  .toggle {
+    color:#555;
+    font-size:0.9rem;
+    margin-left:0.5rem;
+    cursor:pointer;
+  }
+  .details ul {
+    padding-left:1.2rem;
+  }
+  @media(max-width:768px){
+    .layout{
+      grid-template-columns:1fr;
+    }
+    .sidebar{
+      position:relative;
+      height:auto;
+    }
+  }
+</style>
 </head>
 <body>
-  <div class="header">
+<div class="layout">
+  <aside class="sidebar">
+    <img src="https://via.placeholder.com/150" alt="Sharon Rousseau">
     <h1>Sharon Rousseau</h1>
-    <p>Dynamic Operations Coordinator | Systems &amp; Process Management | Compliance Expert</p>
-    <p>📍 Sandton, South Africa | 📞 +27 71 303 4629 | ✉️ <a href="mailto:sharon.rousseau00@gmail.com" style="color:#79c2f3; text-decoration:none;">sharon.rousseau00@gmail.com</a></p>
-    <p><a href="https://www.linkedin.com/in/sharon-rousseau-a35ba312b/" style="color:#79c2f3;">LinkedIn Profile</a></p>
-  </div>
-  <div class="container">
-    <div class="section">
-      <h2>Professional Summary</h2>
+    <h2>Operations Coordinator, Holborn Assets</h2>
+    <div class="contact">
+      <p><a href="tel:+27713034629">+27 71 303 4629</a></p>
+      <p><a href="mailto:sharon.rousseau00@gmail.com">sharon.rousseau00@gmail.com</a></p>
+      <a class="linkedin-btn" href="https://www.linkedin.com/in/sharon-rousseau-a35ba312b/" target="_blank">LinkedIn</a>
+    </div>
+  </aside>
+  <main class="content">
+    <section>
+      <h3>Professional Summary</h3>
       <p>Operations Coordinator at Holborn Assets with expertise in compliance register maintenance, systems implementation, and project management. Strong track record of streamlining operations, driving cross-functional initiatives, and enhancing internal systems across multiple departments and regions.</p>
-    </div>
-    <div class="section">
-      <h2>Key Skills</h2>
-      <ul>
-        <li>Regulatory &amp; Compliance: FSCA register, Fit &amp; Proper, CPD records, offshore client transfers</li>
-        <li>Process Implementation: SharePoint migration, systems design, digital transformation</li>
-        <li>HR &amp; Admin: Onboarding, contract drafting, internal policy creation</li>
-        <li>Office &amp; Facilities Management: Lease contracts, vendor management, logistics</li>
-        <li>Project &amp; Event Management: Internal training, onboarding programs, budget control</li>
-        <li>Marketing &amp; Communication: Digital content design, internal newsletters, branding</li>
-        <li>Software &amp; Systems: SharePoint, Teams, Microsoft 365, CRM tools</li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Work Experience</h2>
+    </section>
+    <section>
+      <h3>Key Skills</h3>
+      <div class="skills-list">
+        <span class="pill">Regulatory & Compliance: FSCA register, Fit & Proper, CPD records, offshore client transfers</span>
+        <span class="pill">Process Implementation: SharePoint migration, systems design, digital transformation</span>
+        <span class="pill">HR & Admin: Onboarding, contract drafting, internal policy creation</span>
+        <span class="pill">Office & Facilities Management: Lease contracts, vendor management, logistics</span>
+        <span class="pill">Project & Event Management: Internal training, onboarding programs, budget control</span>
+        <span class="pill">Marketing & Communication: Digital content design, internal newsletters, branding</span>
+        <span class="pill">Software & Systems: SharePoint, Teams, Microsoft 365, CRM tools</span>
+      </div>
+    </section>
+    <section>
+      <h3>Work Experience</h3>
       <div class="job">
-        <h3>Operations Coordinator, Africa – Holborn Assets, Sandton</h3>
+        <h4>Operations Coordinator, Africa – Holborn Assets, Sandton</h4>
         <p><em>Jun 2024 – Present</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>Compliance &amp; Regulatory Oversight</h4>
+          <h5>Compliance & Regulatory Oversight</h5>
           <ul>
             <li>Managed onboarding and offboarding of advisers, supporting accurate maintenance of the FSCA regulatory register.</li>
             <li>Maintained adviser Fit and Proper records, ensuring all outstanding documentation and compliance requirements were obtained.</li>
@@ -63,7 +160,7 @@
             <li>Led efforts in certifier access management, signatory maintenance, and offshore onboarding documentation.</li>
             <li>Managed Terms of Business processes, submitting applications for local and offshore providers, as well as training respective Compliance members on the same.</li>
           </ul>
-          <h4>Systems &amp; Process Management</h4>
+          <h5>Systems & Process Management</h5>
           <ul>
             <li>Headed the Africa region SharePoint migration from OneDrive, including updating and migrating all documentation, setting permissions, creating folder structures, and maintaining access.</li>
             <li>Developed internal software tools and process enhancements in a personal capacity to streamline operations and improve internal workflow efficiency.</li>
@@ -73,7 +170,7 @@
             <li>Digitalized company certification process.</li>
             <li>Designed company and individual advisor digital stamps.</li>
           </ul>
-          <h4>Training &amp; Staff Management</h4>
+          <h5>Training & Staff Management</h5>
           <ul>
             <li>Provided training and support to liaison officers, receptionists, and office managers.</li>
             <li>Trained all operational staff in their roles and responsibilities across Africa.</li>
@@ -81,14 +178,14 @@
             <li>Oversaw onboarding and setup of all new starters on internal systems and platforms.</li>
             <li>Provided ongoing support and development guidance to ensure consistent operational delivery and team alignment.</li>
           </ul>
-          <h4>Marketing &amp; Communications</h4>
+          <h5>Marketing & Communications</h5>
           <ul>
             <li>Designed, created, implemented, and maintained the company newsletter.</li>
             <li>Designed internal marketing materials and branding for events and communications.</li>
             <li>Created all internal flyers for the Africa region.</li>
             <li>Managed the budgeting, planning, and facilitation of company and adviser-specific marketing events.</li>
           </ul>
-          <h4>Cross-Functional &amp; Project-Based Support</h4>
+          <h5>Cross-Functional & Project-Based Support</h5>
           <ul>
             <li>Drafted HR-related documentation including contracts, offer letters, salary adjustments, and policy notices.</li>
             <li>Collaborated with Compliance, Operations, and departmental managers to streamline workflows and improve operational efficiencies.</li>
@@ -102,10 +199,10 @@
         </div>
       </div>
       <div class="job">
-        <h3>Office Manager – Holborn Assets, Sandton</h3>
+        <h4>Office Manager – Holborn Assets, Sandton</h4>
         <p><em>Feb 2022 – May 2024</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>General Office Management</h4>
+          <h5>General Office Management</h5>
           <ul>
             <li>Coordinated and facilitated internal team meetings and regular company updates.</li>
             <li>Managed general office upkeep, including cleaning staff, printer logs, maintenance, and waste disposal.</li>
@@ -118,7 +215,7 @@
             <li>Time and task prioritization across dynamic roles.</li>
             <li>English Afrikaans.</li>
           </ul>
-          <h4>Events &amp; Engagement</h4>
+          <h5>Events & Engagement</h5>
           <ul>
             <li>Managed office rental contracts and negotiations.</li>
             <li>Liaised with landlords to negotiate and maintain lease agreements.</li>
@@ -140,7 +237,7 @@
             <li>Arranged and hosted monthly team building activities for office staff.</li>
             <li>Managed full event coordination including logistics, travel, budgeting, and facilitation of company-wide events and mandated training.</li>
           </ul>
-          <h4>Systems &amp; Process Management | Cross-Functional &amp; Project-Based Support | Compliance | Operations | HR</h4>
+          <h5>Systems & Process Management | Cross-Functional & Project-Based Support | Compliance | Operations | HR</h5>
           <ul>
             <li>Supported regional provider event logistics, updates, and meetings.</li>
             <li>Arranged social events for both internal teams and provider partnerships.</li>
@@ -170,21 +267,21 @@
         </div>
       </div>
       <div class="job">
-        <h3>Receptionist – Holborn Assets, Sandton, South Africa</h3>
+        <h4>Receptionist – Holborn Assets, Sandton, South Africa</h4>
         <p><em>Nov 2021 – Jan 2022</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>Facilities &amp; Office Support</h4>
+          <h5>Facilities & Office Support</h5>
           <ul>
             <li>Provided general office maintenance support and addressed day-to-day facility needs.</li>
             <li>Processed office-related expense requests and orders.</li>
             <li>Managed service provider accounts related to office support and supplies.</li>
           </ul>
-          <h4>Front Office &amp; Communication</h4>
+          <h5>Front Office & Communication</h5>
           <ul>
             <li>Answered and managed the central telephone system, directing calls to the appropriate staff or department.</li>
             <li>Welcomed visitors and clients, maintaining a clean and professional reception area to ensure a positive first impression.</li>
           </ul>
-          <h4>Client Interaction &amp; Documentation | Scheduling &amp; Coordination | General Administrative Support</h4>
+          <h5>Client Interaction & Documentation | Scheduling & Coordination | General Administrative Support</h5>
           <ul>
             <li>Responded to client and internal staff queries via phone, email, and in person.</li>
             <li>Collected and distributed messages for staff, supporting smooth internal communication.</li>
@@ -204,10 +301,10 @@
         </div>
       </div>
       <div class="job">
-        <h3>Data Administrator – Hammond Pole Attorneys, Johannesburg, South Africa</h3>
+        <h4>Data Administrator – Hammond Pole Attorneys, Johannesburg, South Africa</h4>
         <p><em>Feb 2021 – Oct 2021</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>Data Entry &amp; Records Management</h4>
+          <h5>Data Entry & Records Management</h5>
           <ul>
             <li>Entered client details, financial notes, and payment information into systems with speed and accuracy.</li>
             <li>Verified that data from various sources was captured accurately and completely.</li>
@@ -232,10 +329,10 @@
         </div>
       </div>
       <div class="job">
-        <h3>Small Business Owner – Self-Employed, Sandton, South Africa</h3>
+        <h4>Small Business Owner – Self-Employed, Sandton, South Africa</h4>
         <p><em>Apr 2020 – Sep 2021</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>Business Operations &amp; Administration</h4>
+          <h5>Business Operations & Administration</h5>
           <ul>
             <li>Managed all day-to-day operations including opening/closing procedures, scheduling, and workflow coordination.</li>
             <li>Maintained organized digital and physical records including bookings, invoices, and supplier contracts.</li>
@@ -244,26 +341,26 @@
             <li>Sourced new clients through referrals, digital outreach, and promotional activities.</li>
             <li>Maintained and updated CIPC company records.</li>
           </ul>
-          <h4>Financial Management &amp; Costing</h4>
+          <h5>Financial Management & Costing</h5>
           <ul>
             <li>Prepared monthly budgets, tracked expenses, and managed overhead costs.</li>
             <li>Performed service pricing and margin analysis based on COGS and market positioning.</li>
             <li>Managed accounts payable and receivable, cash flow forecasts, and reconciliations.</li>
           </ul>
-          <h4>Procurement &amp; Inventory Management</h4>
+          <h5>Procurement & Inventory Management</h5>
           <ul>
             <li>Sourced and negotiated pricing with suppliers for products and equipment.</li>
             <li>Maintained stock levels and monitored usage to avoid over-purchasing.</li>
             <li>Managed supplier relationships, purchasing cycles, and timely stock delivery.</li>
             <li>Conducted regular stock takes and implemented cost-saving inventory practices.</li>
           </ul>
-          <h4>Service Design &amp; Product Offerings</h4>
+          <h5>Service Design & Product Offerings</h5>
           <ul>
             <li>Designed and maintained service menus and pricing lists.</li>
             <li>Researched and introduced new techniques, tools, and high-end product lines.</li>
             <li>Curated retail product ranges (nail care, skincare, accessories) for additional revenue.</li>
           </ul>
-          <h4>Branding, Digital Marketing &amp; Promotion</h4>
+          <h5>Branding, Digital Marketing & Promotion</h5>
           <ul>
             <li>Designed brand identity including visual elements, tone, and customer experience.</li>
             <li>Created brochures, loyalty cards, signage, and digital marketing content.</li>
@@ -271,18 +368,20 @@
             <li>Scheduled and published content showcasing services and promotions.</li>
             <li>Ran paid social media ad campaigns and email marketing.</li>
           </ul>
-          <h4>Client Relationship Management</h4>
+          <h5>Client Relationship Management</h5>
           <ul>
             <li>Responded to client messages, inquiries, and reviews across digital platforms.</li>
+            <li>Delivered personalized client service and managed bookings via online systems and WhatsApp.</li>
+            <li>Handled client feedback and resolved service concerns professionally.</li>
             <li>Implemented loyalty programs and tracked customer preferences for tailored experiences.</li>
           </ul>
         </div>
       </div>
       <div class="job">
-        <h3>Administrator – Exley Financial Solutions, Johannesburg, South Africa</h3>
+        <h4>Administrator – Exley Financial Solutions, Johannesburg, South Africa</h4>
         <p><em>May 2019 – Mar 2020</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>Administrative Support &amp; Coordination</h4>
+          <h5>Administrative Support & Coordination</h5>
           <ul>
             <li>Computerized and streamlined office operations including customer communications, appointment scheduling, and record-keeping.</li>
             <li>Collected, validated, and distributed key information across departments to support operational continuity.</li>
@@ -292,7 +391,7 @@
             <li>Assisted in basic accounting tasks including invoice tracking, reconciliation, and documentation preparation.</li>
             <li>Coordinated general administrative tasks and supported day-to-day office efficiency.</li>
           </ul>
-          <h4>Reception &amp; Front Office Duties | Records &amp; Communications Management</h4>
+          <h5>Reception & Front Office Duties | Records & Communications Management</h5>
           <ul>
             <li>Greeted clients and visitors with professionalism and courtesy, providing information and guidance.</li>
             <li>Answered, screened, and transferred incoming calls; took messages and followed up with internal teams.</li>
@@ -306,10 +405,10 @@
         </div>
       </div>
       <div class="job">
-        <h3>Personal Assistant to the Chief Executive Officer – PACS Pty Ltd, Johannesburg, South Africa</h3>
+        <h4>Personal Assistant to the Chief Executive Officer – PACS Pty Ltd, Johannesburg, South Africa</h4>
         <p><em>Jan 2015 – Jun 2019</em> <span class="toggle">Show details</span></p>
         <div class="details" style="display:none;">
-          <h4>Executive &amp; Personal Assistance</h4>
+          <h5>Executive & Personal Assistance</h5>
           <ul>
             <li>Responded to emails and other correspondence to facilitate communication and enhance business processes.</li>
             <li>Managed executive calendars, scheduled internal and external meetings, and coordinated appointments.</li>
@@ -326,40 +425,36 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="section">
-      <h2>Education &amp; Certifications</h2>
-      <div class="edu">
-        <p><strong>Advanced PA's And Secretaries Program</strong> – Seven 7 Training, Johannesburg (Oct 2022)</p>
-      </div>
+    </section>
+    <section>
+      <h3>Education & Certifications</h3>
+      <p><strong>Advanced PA's And Secretaries Program</strong> – Seven 7 Training, Johannesburg (Oct 2022)</p>
       <p><em>Currently pursuing RE5 and RE1 Certifications – Completion expected by end of 2025</em></p>
-    </div>
-    <div class="section">
-      <h2>Languages</h2>
-      <div class="languages-list">
+    </section>
+    <section>
+      <h3>Languages</h3>
+      <div class="skills-list">
         <span class="pill">English (C2)</span>
         <span class="pill">Afrikaans (C2)</span>
       </div>
-    </div>
-  </div>
-  <footer>
-    <p>Sharon Rousseau &copy; 2025</p>
-  </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      document.querySelectorAll('.toggle').forEach(function(t){
-        t.addEventListener('click', function(){
-          var d = this.parentElement.nextElementSibling;
-          if(d.style.display === 'none' || d.style.display===''){
-            d.style.display = 'block';
-            this.textContent = 'Hide details';
-          } else {
-            d.style.display = 'none';
-            this.textContent = 'Show details';
-          }
-        });
+    </section>
+  </main>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.toggle').forEach(function(t){
+      t.addEventListener('click', function(){
+        var d = this.parentElement.nextElementSibling;
+        if(d.style.display === 'none' || d.style.display===''){
+          d.style.display = 'block';
+          this.textContent = 'Hide details';
+        } else {
+          d.style.display = 'none';
+          this.textContent = 'Show details';
+        }
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
