@@ -139,19 +139,31 @@
   }
 
   .hero-section {
-    margin-top: 150px;
+    margin-top: 80px;
     position: relative;
-    height: 420px;
-    background: var(--primary-gradient);
-    background-image: 
-      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    min-height: 80vh;
+    background: url("hero.png") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
-    animation: heroGlow 6s ease-in-out infinite alternate;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102,126,234,0.85) 0%, rgba(118,75,162,0.85) 50%, rgba(240,147,251,0.85) 100%);
+  }
+
+  .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
   }
 
   @keyframes heroGlow {
@@ -274,12 +286,6 @@
     left: 100%;
   }
 
-  .hero-image {
-    flex: 1;
-    height: 320px;
-    background: url('hero.png') center/cover;
-    border-radius: 15px;
-  }
 
   .sidebar-nav {
     position: fixed;
@@ -899,10 +905,6 @@
       text-align: center;
     }
     
-    .hero-image {
-      width: 100%;
-      height: 200px;
-    }
   }
 
   @media (max-width: 768px) {
@@ -963,8 +965,10 @@
           <button class="contact-btn">CONTACT ME</button>
         </div>
       </div>
-      <div class="hero-image"></div>
     </div>
+    <svg class="hero-wave" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,96L80,101.3C160,107,320,117,480,128C640,139,800,149,960,133.3C1120,117,1280,75,1360,53.3L1440,32V150H1360C1280,150,1120,150,960,150C800,150,640,150,480,150C320,150,160,150,80,150H0Z" fill="#fff"></path>
+    </svg>
   </section>
 
   <!-- Sidebar Navigation -->
