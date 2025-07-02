@@ -616,7 +616,7 @@
         border-radius: 15px;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .skill-item::before {
@@ -669,6 +669,29 @@
       .skill-text {
         font-weight: 500;
         color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 220px;
+      }
+
+      .skill-item::after {
+        content: attr(data-full);
+        display: none;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 0.5rem);
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        white-space: normal;
+        max-width: 300px;
+        z-index: 10;
+      }
+
+      .skill-item:hover::after {
+        display: block;
       }
 
       .work-history {
@@ -2470,6 +2493,14 @@
           button.textContent = "Hide Description";
         }
       }
+
+      // Populate tooltip data for skills
+      document.querySelectorAll(".skill-item").forEach((item) => {
+        const txt = item.querySelector(".skill-text");
+        if (txt) {
+          item.setAttribute("data-full", txt.textContent.trim());
+        }
+      });
 
       // Enhanced smooth scrolling with easing
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
