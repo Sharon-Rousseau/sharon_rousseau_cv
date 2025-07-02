@@ -616,7 +616,7 @@
         border-radius: 15px;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
-        overflow: visible;
+        overflow: hidden;
       }
 
       .skill-item::before {
@@ -640,6 +640,7 @@
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         border-color: rgba(0, 0, 0, 0.2);
+        overflow: visible;
       }
 
       .skill-item:hover::before {
@@ -673,26 +674,25 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         max-width: 220px;
+        transition: all 0.2s ease;
       }
 
-      .skill-item::after {
-        content: attr(data-full);
-        display: none;
+      .skill-item:hover .skill-text {
         position: absolute;
-        left: 0;
-        top: calc(100% + 0.5rem);
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 0.5rem 1rem;
+        left: calc(50px + 1rem);
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.95);
+        padding: 0.25rem 0.75rem;
         border-radius: 8px;
-        white-space: normal;
-        max-width: 300px;
-        z-index: 10;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        white-space: nowrap;
+        max-width: none;
+        overflow: visible;
+        pointer-events: none;
+        z-index: 1;
       }
 
-      .skill-item:hover::after {
-        display: block;
-      }
 
       .work-history {
         display: flex;
@@ -2494,13 +2494,6 @@
         }
       }
 
-      // Populate tooltip data for skills
-      document.querySelectorAll(".skill-item").forEach((item) => {
-        const txt = item.querySelector(".skill-text");
-        if (txt) {
-          item.setAttribute("data-full", txt.textContent.trim());
-        }
-      });
 
       // Enhanced smooth scrolling with easing
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
