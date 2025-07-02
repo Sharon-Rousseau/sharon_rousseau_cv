@@ -156,7 +156,8 @@
       .hero-section {
         margin-top: 0;
         position: relative;
-        min-height: 80vh;
+        min-height: 90vh;
+        padding-top: 3rem;
         background: url("hero.png") center/cover no-repeat;
         display: flex;
         align-items: center;
@@ -356,19 +357,26 @@
       }
 
       .popup-btn {
-        display: block;
-        text-align: center;
-        padding: 0.75rem 1rem;
-        border-radius: 5px;
-        background: #333;
-        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #333;
+        color: #333;
         text-decoration: none;
-        font-weight: 600;
-        transition: background 0.3s ease;
+        transition: background 0.3s ease, color 0.3s ease;
       }
 
       .popup-btn:hover {
-        background: #555;
+        background: #333;
+        color: #fff;
+      }
+
+      .popup-btn i {
+        font-size: 1.2rem;
       }
 
       .sidebar-nav {
@@ -398,7 +406,7 @@
       .sidebar-nav a {
         display: block;
         padding: 0.75rem 1rem;
-        color: #666;
+        color: #fff;
         text-decoration: none;
         border-radius: 8px;
         transition: all 0.3s ease;
@@ -420,7 +428,7 @@
       .main-content {
         margin-left: 250px;
         padding: 2rem;
-        margin-top: 100px;
+        margin-top: 2cm;
       }
 
       .section {
@@ -1084,11 +1092,12 @@
           target="_blank"
           rel="noopener"
           class="popup-btn"
-          >WhatsApp</a
         >
-        <a href="mailto:sharon.rousseau00@gmail.com" class="popup-btn"
-          >Email</a
-        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:sharon.rousseau00@gmail.com" class="popup-btn">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
     </div>
 
