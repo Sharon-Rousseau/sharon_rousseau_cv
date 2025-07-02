@@ -22,24 +22,24 @@
       :root {
         --primary-gradient: linear-gradient(
           135deg,
-          #667eea 0%,
-          #764ba2 50%,
-          #f093fb 100%
+          #444 0%,
+          #222 50%,
+          #000 100%
         );
-        --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        --cool-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        --accent-gradient: linear-gradient(135deg, #666 0%, #333 100%);
+        --warm-gradient: linear-gradient(135deg, #555 0%, #222 100%);
+        --cool-gradient: linear-gradient(135deg, #aaa 0%, #777 100%);
+        --dark-gradient: linear-gradient(135deg, #111 0%, #333 100%);
         --glass-bg: rgba(255, 255, 255, 0.25);
         --glass-border: rgba(255, 255, 255, 0.18);
-        --primary-blue: #4a90e2;
-        --accent-purple: #7c3aed;
-        --accent-pink: #ec4899;
-        --accent-cyan: #06b6d4;
-        --text-primary: #1e293b;
-        --text-secondary: #64748b;
+        --primary-blue: #444;
+        --accent-purple: #555;
+        --accent-pink: #777;
+        --accent-cyan: #999;
+        --text-primary: #111;
+        --text-secondary: #666;
         --surface-light: #ffffff;
-        --surface-elevated: #f8fafc;
+        --surface-elevated: #f0f0f0;
       }
 
       body {
@@ -48,9 +48,9 @@
         color: var(--text-primary);
         background: linear-gradient(
           135deg,
-          #f8fafc 0%,
-          #e2e8f0 50%,
-          #f1f5f9 100%
+          #f5f5f5 0%,
+          #dcdcdc 50%,
+          #ffffff 100%
         );
         min-height: 100vh;
       }
@@ -118,7 +118,7 @@
         backdrop-filter: blur(10px);
         color: var(--accent-purple);
         transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .auth-buttons {
@@ -144,12 +144,12 @@
         font-weight: 500;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .create-profile-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         filter: brightness(1.1);
       }
 
@@ -171,9 +171,9 @@
         inset: 0;
         background: linear-gradient(
           135deg,
-          rgba(102, 126, 234, 0.85) 0%,
-          rgba(118, 75, 162, 0.85) 50%,
-          rgba(240, 147, 251, 0.85) 100%
+          rgba(50, 50, 50, 0.85) 0%,
+          rgba(20, 20, 20, 0.85) 50%,
+          rgba(0, 0, 0, 0.85) 100%
         );
       }
 
@@ -219,7 +219,7 @@
         border-radius: 20px;
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
-        max-width: 420px;
+        max-width: 550px;
       }
 
       .profile-section:hover {
@@ -257,6 +257,7 @@
         margin-bottom: 0.5rem;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         letter-spacing: -0.5px;
+        white-space: nowrap;
       }
 
       .title-location {
@@ -286,7 +287,7 @@
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        box-shadow: 0 8px 25px rgba(250, 112, 154, 0.4);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         position: relative;
         overflow: hidden;
       }
@@ -309,12 +310,65 @@
 
       .contact-btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(250, 112, 154, 0.5);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
         filter: brightness(1.1);
       }
 
       .contact-btn:hover::before {
         left: 100%;
+      }
+
+      .contact-popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .contact-popup.show {
+        display: flex;
+      }
+
+      .popup-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 280px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .popup-content .close-popup {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: #333;
+      }
+
+      .popup-btn {
+        display: block;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border-radius: 5px;
+        background: #333;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+
+      .popup-btn:hover {
+        background: #555;
       }
 
       .sidebar-nav {
@@ -360,7 +414,7 @@
         backdrop-filter: blur(10px);
         color: var(--accent-purple);
         transform: translateX(5px);
-        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .main-content {
@@ -528,7 +582,7 @@
         color: white;
         font-size: 1.2rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .skills-grid {
@@ -571,7 +625,7 @@
         background: rgba(255, 255, 255, 0.7);
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        border-color: rgba(124, 58, 237, 0.3);
+        border-color: rgba(0, 0, 0, 0.2);
       }
 
       .skill-item:hover::before {
@@ -595,7 +649,7 @@
         font-size: 1.3rem;
         flex-shrink: 0;
         transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .skill-text {
@@ -651,7 +705,7 @@
         font-size: 1.5rem;
         flex-shrink: 0;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .job-info h3 {
@@ -682,7 +736,7 @@
         margin-top: 1rem;
         border-radius: 25px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(168, 237, 234, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         position: relative;
         overflow: hidden;
       }
@@ -705,7 +759,7 @@
 
       .show-description:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(168, 237, 234, 0.4);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         filter: brightness(1.1);
       }
 
@@ -723,7 +777,7 @@
       }
 
       .job-details h4 {
-        color: #4a90e2;
+        color: var(--primary-blue);
         margin: 1.5rem 0 1rem 0;
         font-size: 1.1rem;
         font-weight: 600;
@@ -745,7 +799,7 @@
         content: "✓";
         position: absolute;
         left: 0;
-        color: #4a90e2;
+        color: var(--primary-blue);
         font-weight: bold;
       }
 
@@ -789,7 +843,7 @@
         font-size: 1.3rem;
         flex-shrink: 0;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(168, 237, 234, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .education-header:hover .education-icon {
@@ -824,14 +878,14 @@
       }
 
       .education-status.completed {
-        background: #d4edda;
-        color: #155724;
+        background: #ddd;
+        color: #333;
       }
 
       .certification-section {
         margin-top: 2rem;
         padding-top: 2rem;
-        border-top: 2px solid #e9ecef;
+        border-top: 2px solid #ccc;
       }
 
       .certification-header {
@@ -840,7 +894,7 @@
         gap: 1rem;
         font-size: 1.4rem;
         font-weight: 600;
-        color: #4a90e2;
+        color: var(--primary-blue);
         margin-bottom: 1.5rem;
       }
 
@@ -857,7 +911,7 @@
         border: 1px solid rgba(255, 255, 255, 0.4);
         border-radius: 15px;
         padding: 1.5rem;
-        border-left: 4px solid #ffc107;
+        border-left: 4px solid #999;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
       }
@@ -885,7 +939,7 @@
         font-size: 1.1rem;
         margin-bottom: 1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(250, 112, 154, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .cert-info h4 {
@@ -907,24 +961,24 @@
         align-items: center;
         gap: 0.5rem;
         font-size: 0.85rem;
-        color: #856404;
+        color: #333;
         font-weight: 500;
       }
 
       .cert-status.in-progress {
-        background: #fff3cd;
+        background: #eee;
         padding: 0.5rem 0.8rem;
         border-radius: 8px;
-        border: 1px solid #ffeaa7;
+        border: 1px solid #ccc;
       }
 
       .certification-note {
         display: flex;
         align-items: flex-start;
         gap: 1rem;
-        background: rgba(231, 243, 255, 0.8);
+        background: rgba(245, 245, 245, 0.8);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(79, 172, 254, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 1.5rem;
         border-radius: 15px;
         border-left: 4px solid var(--primary-blue);
@@ -938,14 +992,14 @@
       }
 
       .certification-note i {
-        color: #4a90e2;
+        color: var(--primary-blue);
         font-size: 1.2rem;
         margin-top: 0.2rem;
         flex-shrink: 0;
       }
 
       .certification-note p {
-        color: #2c5282;
+        color: var(--primary-blue);
         font-size: 0.95rem;
         line-height: 1.5;
         margin: 0;
@@ -1021,6 +1075,22 @@
         ></path>
       </svg>
     </section>
+
+    <div id="contact-popup" class="contact-popup">
+      <div class="popup-content">
+        <button class="close-popup" aria-label="Close">&times;</button>
+        <a
+          href="https://wa.me/27713034629"
+          target="_blank"
+          rel="noopener"
+          class="popup-btn"
+          >WhatsApp</a
+        >
+        <a href="mailto:sharon.rousseau00@gmail.com" class="popup-btn"
+          >Email</a
+        >
+      </div>
+    </div>
 
     <!-- Sidebar Navigation -->
     <nav class="sidebar-nav">
@@ -2240,6 +2310,23 @@
         });
       });
 
+      const contactBtn = document.querySelector(".contact-btn");
+      const contactPopup = document.getElementById("contact-popup");
+      const closePopupBtn = document.querySelector(".close-popup");
+      if (contactBtn && contactPopup && closePopupBtn) {
+        contactBtn.addEventListener("click", () => {
+          contactPopup.classList.add("show");
+        });
+        closePopupBtn.addEventListener("click", () => {
+          contactPopup.classList.remove("show");
+        });
+        contactPopup.addEventListener("click", (e) => {
+          if (e.target === contactPopup) {
+            contactPopup.classList.remove("show");
+          }
+        });
+      }
+
       // Enhanced scroll-based animations
       const observerOptions = {
         threshold: 0.1,
@@ -2300,7 +2387,7 @@
     .nav-ripple {
       position: absolute;
       border-radius: 50%;
-      background: rgba(124, 58, 237, 0.3);
+      background: rgba(128, 128, 128, 0.3);
       transform: scale(0);
       animation: ripple 0.6s linear;
       pointer-events: none;
