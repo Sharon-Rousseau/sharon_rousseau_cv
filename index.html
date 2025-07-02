@@ -333,6 +333,9 @@
       .contact-popup.show {
         display: flex;
       }
+      .contact-popup.show .popup-content {
+        transform: scale(3);
+      }
 
       .popup-content {
         background: #fff;
@@ -344,6 +347,8 @@
         width: fit-content;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         position: relative;
+        transform: scale(1);
+        transition: transform 0.3s ease;
       }
 
       .popup-content .close-popup {
