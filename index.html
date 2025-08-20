@@ -1177,7 +1177,7 @@
             <h1>SHARON ROUSSEAU</h1>
             <div class="title-location">
               <span
-                ><i class="fas fa-briefcase"></i> OPERATIONS COORDINATOR</span
+                ><i class="fas fa-briefcase"></i> OPERATIONS COORDINATOR AFRICA</span
               >
               <span><i class="fas fa-map-marker-alt"></i> SANDTON</span>
             </div>
@@ -2692,28 +2692,28 @@
       function positionPopup(skillItem) {
         const rect = skillItem.getBoundingClientRect();
         const popupRect = skillPopup.getBoundingClientRect();
-        
+
         // Start with popup centered over the skill item
         let left = rect.left + (rect.width / 2) - (popupRect.width / 2);
         let top = rect.top + (rect.height / 2) - (popupRect.height / 2);
-        
+
         // Adjust if popup would go off screen edges
         const margin = 10;
-        
+
         // Check horizontal bounds
         if (left < margin) {
           left = margin;
         } else if (left + popupRect.width > window.innerWidth - margin) {
           left = window.innerWidth - popupRect.width - margin;
         }
-        
+
         // Check vertical bounds
         if (top < margin) {
           top = margin;
         } else if (top + popupRect.height > window.innerHeight - margin) {
           top = window.innerHeight - popupRect.height - margin;
         }
-        
+
         skillPopup.style.left = left + 'px';
         skillPopup.style.top = top + 'px';
       }
@@ -2722,12 +2722,12 @@
         const icon = skillItem.querySelector('.skill-icon i');
         const text = skillItem.querySelector('.skill-text');
         const fullText = skillItem.dataset.fullText || text.textContent.trim();
-        
+
         popupIcon.className = icon.className;
         popupText.textContent = fullText;
-        
+
         skillPopup.classList.add('show');
-        
+
         // Position popup after it's shown so we can get its dimensions
         setTimeout(() => {
           positionPopup(skillItem);
