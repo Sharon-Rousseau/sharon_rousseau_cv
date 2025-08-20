@@ -671,6 +671,59 @@
         color: #333;
       }
 
+      /* Skill Popup */
+      .skill-popup {
+        position: fixed;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        padding: 1.5rem;
+        min-width: 300px;
+        max-width: 400px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        transform: scale(0.8);
+      }
+
+      .skill-popup.show {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+
+      .skill-popup-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .skill-popup-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--accent-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .skill-popup-text {
+        font-weight: 500;
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
       .work-history {
         display: flex;
         flex-direction: column;
@@ -1218,7 +1271,7 @@
           SKILLS
         </h2>
         <div class="skills-grid">
-          <div class="skill-item">
+          <div class="skill-item" data-full-text="FSCA representative register maintenance and Fit and Proper documentation management">
             <div class="skill-icon">
               <i class="fas fa-shield-alt"></i>
             </div>
@@ -1226,7 +1279,7 @@
               FSCA representative register maintenance and Fit and Proper...
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-full-text="Terms of Business submission and provider management (local and offshore)">
             <div class="skill-icon">
               <i class="fas fa-file-contract"></i>
             </div>
@@ -1234,7 +1287,7 @@
               Terms of Business submission and provider management (local and...
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-full-text="Sub-agent applications, closures, quarterly reconciliations, and client transfer coordination">
             <div class="skill-icon">
               <i class="fas fa-users-cog"></i>
             </div>
@@ -1267,7 +1320,7 @@
               HR administration and onboarding workflows
             </div>
           </div>
-          <div class="skill-item">
+          <div class="skill-item" data-full-text="Data and records management (accuracy, confidentiality, compliance)">
             <div class="skill-icon">
               <i class="fas fa-chart-line"></i>
             </div>
@@ -2459,6 +2512,18 @@
       >
     </section>
 
+    <!-- Skill Popup -->
+    <div id="skill-popup" class="skill-popup">
+      <div class="skill-popup-content">
+        <div class="skill-popup-icon">
+          <i id="popup-icon" class="fas fa-cogs"></i>
+        </div>
+        <div class="skill-popup-text" id="popup-text">
+          Skill description will appear here
+        </div>
+      </div>
+    </div>
+
     <script>
       function toggleJobDetails(button) {
         const details = button.nextElementSibling;
@@ -2617,6 +2682,95 @@
       const style = document.createElement("style");
       style.textContent = additionalCSS;
       document.head.appendChild(style);
+
+      // Skill Popup functionality
+      const skillPopup = document.getElementById('skill-popup');
+      const popupIcon = document.getElementById('popup-icon');
+      const popupText = document.getElementById('popup-text');
+      let hoverTimeout;
+
+      function positionPopup(skillItem) {
+        const rect = skillItem.getBoundingClientRect();
+        const popupRect = skillPopup.getBoundingClientRect();
+        
+        // Start with popup centered over the skill item
+        let left = rect.left + (rect.width / 2) - (popupRect.width / 2);
+        let top = rect.top + (rect.height / 2) - (popupRect.height / 2);
+        
+        // Adjust if popup would go off screen edges
+        const margin = 10;
+        
+        // Check horizontal bounds
+        if (left < margin) {
+          left = margin;
+        } else if (left + popupRect.width > window.innerWidth - margin) {
+          left = window.innerWidth - popupRect.width - margin;
+        }
+        
+        // Check vertical bounds
+        if (top < margin) {
+          top = margin;
+        } else if (top + popupRect.height > window.innerHeight - margin) {
+          top = window.innerHeight - popupRect.height - margin;
+        }
+        
+        skillPopup.style.left = left + 'px';
+        skillPopup.style.top = top + 'px';
+      }
+
+      function showPopup(skillItem) {
+        const icon = skillItem.querySelector('.skill-icon i');
+        const text = skillItem.querySelector('.skill-text');
+        const fullText = skillItem.dataset.fullText || text.textContent.trim();
+        
+        popupIcon.className = icon.className;
+        popupText.textContent = fullText;
+        
+        skillPopup.classList.add('show');
+        
+        // Position popup after it's shown so we can get its dimensions
+        setTimeout(() => {
+          positionPopup(skillItem);
+        }, 10);
+      }
+
+      function hidePopup() {
+        clearTimeout(hoverTimeout);
+        hoverTimeout = setTimeout(() => {
+          skillPopup.classList.remove('show');
+        }, 100); // Small delay to allow mouse movement between elements
+      }
+
+      function cancelHide() {
+        clearTimeout(hoverTimeout);
+      }
+
+      document.querySelectorAll('.skill-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          cancelHide();
+          showPopup(item);
+        });
+
+        item.addEventListener('mouseleave', () => {
+          hidePopup();
+        });
+      });
+
+      // Keep popup open when hovering over the popup itself
+      skillPopup.addEventListener('mouseenter', () => {
+        cancelHide();
+      });
+
+      skillPopup.addEventListener('mouseleave', () => {
+        hidePopup();
+      });
+
+      // Hide popup when clicking anywhere
+      document.addEventListener('click', () => {
+        clearTimeout(hoverTimeout);
+        skillPopup.classList.remove('show');
+      });
+
     </script>
   </body>
 </html>
