@@ -243,3 +243,28 @@ document.addEventListener('click', () => {
     clearTimeout(hoverTimeout);
     skillPopup.classList.remove('show');
 });
+
+// Mobile menu functionality
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const sidebarNavLinks = document.querySelectorAll('.sidebar-nav a');
+
+// Close mobile menu when clicking navigation links
+sidebarNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (mobileMenuToggle) {
+            mobileMenuToggle.checked = false;
+        }
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const sidebar = document.querySelector('.sidebar-nav');
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    
+    if (mobileMenuToggle && mobileMenuToggle.checked) {
+        if (!sidebar.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            mobileMenuToggle.checked = false;
+        }
+    }
+});
