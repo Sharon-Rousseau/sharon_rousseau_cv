@@ -1200,7 +1200,23 @@ body {
 
   .job-header {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+  }
+
+  .job-info {
+    text-align: left;
+  }
+
+  .job-info h3 {
+    text-align: left;
+  }
+
+  .company-name {
+    text-align: left;
+  }
+
+  .job-period {
+    text-align: left;
   }
 
   /* Fix contact popup scaling on mobile */
