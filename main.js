@@ -257,14 +257,30 @@ sidebarNavLinks.forEach(link => {
     });
 });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
+// Close mobile menu when clicking/touching outside
+function closeMobileMenuOnOutsideClick(e) {
     const sidebar = document.querySelector('.sidebar-nav');
     const hamburgerBtn = document.querySelector('.hamburger-btn');
     
     if (mobileMenuToggle && mobileMenuToggle.checked) {
-        if (!sidebar.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        if (!sidebar.contains(e.target) && !hamburgerBtn.contains(e.target) && e.target !== mobileMenuToggle) {
             mobileMenuToggle.checked = false;
         }
     }
-});
+}
+
+// Add both click and touch events for better mobile support
+document.addEventListener('click', closeMobileMenuOnOutsideClick);
+document.addEventListener('touchstart', closeMobileMenuOnOutsideClick);
+
+// Add specific touch support for hamburger button
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        // Trigger the label click for mobile
+        if (mobileMenuToggle) {
+            mobileMenuToggle.checked = !mobileMenuToggle.checked;
+        }
+    });
+}
