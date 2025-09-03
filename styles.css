@@ -565,6 +565,10 @@ body {
 .website-icon {
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  flex-shrink: 0;
+  aspect-ratio: 1;
   background: var(--dark-gradient);
   border-radius: 10px;
   display: flex;
