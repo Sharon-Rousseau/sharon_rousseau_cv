@@ -1519,9 +1519,16 @@ body {
   }
 
   .job-details li {
-    padding: 0.4rem 0;
+    padding: 0.4rem 0 0.4rem 2rem;
     font-size: clamp(0.85rem, 2.7vw, 0.95rem);
     line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Fix checkmark overlap at very narrow widths */
+  .job-details li {
+    padding-left: 2.5rem;
   }
 }
 
@@ -1543,6 +1550,11 @@ body {
 
   .education-header {
     padding: 1rem;
+  }
+
+  /* Additional spacing for very narrow screens */
+  .job-details li {
+    padding-left: 3rem;
   }
 }
 
